@@ -1,0 +1,8 @@
+{
+  "name": "Copy of CareerChic - 职场女性穿搭指南",
+  "description": "专为职场女性设计的通勤穿搭小程序，提供个性化推荐、AI穿搭分析、社区共享及灵感收藏功能。",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
