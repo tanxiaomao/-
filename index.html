@@ -15,6 +15,11 @@
             background-color: #f8f7f5;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+        }
+        #root {
+            min-height: 100vh;
         }
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
@@ -23,9 +28,17 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* 针对移动端点击态的优化 */
         .active-scale:active {
             transform: scale(0.98);
+        }
+        /* 预加载占位动画 */
+        .loading-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #64748b;
         }
     </style>
 <script type="importmap">
@@ -40,6 +53,15 @@
 </script>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <div class="loading-screen">
+            <div style="width: 24px; height: 24px; border: 2px solid #e2e8f0; border-top-color: #1e293b; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            <p style="margin-top: 12px; font-size: 12px; font-style: italic;">CareerChic 正在准备中...</p>
+        </div>
+    </div>
+    <script type="module" src="./index.tsx"></script>
+    <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
 </body>
 </html>
